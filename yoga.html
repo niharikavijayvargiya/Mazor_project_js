@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="https://umatter.netlify.app/images/icons/favicon.png"
+  />
+  <title>U Matter | Yoga</title>
+</head>
+<body id="yoga-body">
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="nav">
+      <img src="https://umatter.netlify.app/images/home-img/logo.svg" alt="" class="logo" />
+      <ul class="nav-links">
+        <!-- Add active class to the Yoga link -->
+        <li><a class='nav-link' href='index.html'>
+          <i class="fas fa-home nav-icon"></i>
+          <span class="nav-text">Home</span>
+        </a></li>
+
+        <li><a class='nav-link' href='music.html'>
+          <i class="fas fa-music nav-icon"></i>
+          <span class="nav-text">Music</span>
+        </a></li>
+
+        <li><a class='nav-link' href='scene.html'>
+          <i class="fas fa-mountain nav-icon"></i>
+          <span class="nav-text">Scene</span>
+        </a></li>
+
+        <li><a class='nav-link' href='relax.html'>
+          <i class="fas fa-heartbeat nav-icon"></i>
+          <span class="nav-text">Relax & Breathe</span>
+        </a></li>
+
+        <li><a class='nav-link' href='hope.html'>
+          <i class="fas fa-comments nav-icon"></i>
+          <span class="nav-text">Talk To Hope</span>
+        </a></li>
+
+        <!-- Yoga Link -->
+        <li><a class='nav-link active' href='yoga.html'>
+          <i class="fas fa-spa nav-icon"></i>
+          <span class="nav-text">Yoga</span>
+        </a></li>
+
+        <!-- Focus Link -->
+        <li><a class='nav-link' href='focus.html'>
+          <i class="fas fa-bullseye nav-icon"></i>
+          <span class="nav-text">Focus</span>
+        </a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content -->
+
+  <div class="content music">
+    <!-- header start -->
+    <div class="main-header">
+      <h1 class="main-titles music-title-page">Yoga</h1>
+      <div class="filter-button-container">
+        <button
+          class="filter-button filter-item filter-button-active"
+          data-name="all"
+        >
+          <span class="filter-item" data-name="all">All</span>
+        </button>
+
+        <button class="filter-button filter-item" data-name="nature-melodies">
+          <span class="filter-item" data-name="nature-melodies"
+            >Nature Melodies</span
+          >
+        </button>
+
+        <button
+          class="filter-button filter-item"
+          data-name="nature-instument"
+        >
+          <span class="filter-item" data-name="nature-instument"
+            >Nature Instument</span
+          >
+        </button>
+        <button class="filter-button filter-item" data-name="classical">
+          <span class="filter-item" data-name="classical"
+            >Classical Music</span
+          >
+        </button>
+        <button class="filter-button filter-item" data-name="instrumental">
+          <span class="filter-item" data-name="instrumental"
+            >Instumental</span
+          >
+        </button>
+        <button class="filter-button filter-item" data-name="lofi">
+          <span class="filter-item" data-name="lofi">Lofi</span>
+        </button>
+        <button class="filter-button filter-item" data-name="motivating">
+          <span class="filter-item" data-name="motivating">Motivating</span>
+        </button>
+        <button class="filter-button filter-item" data-name="ambient">
+          <span class="filter-item" data-name="ambient">Ambient</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- select box -->
+    <div class="select-box">
+      <div class="options-container category-container">
+        <div class="option music-category" data-name="all">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="all"
+            name="category"
+            data-name="all"
+          />
+          <label for="all">All</label>
+        </div>
+
+        <div class="option music-category" data-name="nature-melodies">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="nature-melodies"
+            name="category"
+            data-name="nature-melodies"
+          />
+          <label for="nature-melodies">Nature Melodies</label>
+        </div>
+
+        <div class="option music-category" data-name="nature-instument">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="nature-instument"
+            name="category"
+            data-name="nature-instument"
+          />
+
+          <label for="nature-instument">Nature and Instrument</label>
+        </div>
+
+        <div class="option music-category" data-name="classical">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="classical"
+            name="category"
+            data-name="classical"
+          />
+          <label for="classical">Classical Music</label>
+        </div>
+
+        <div class="option music-category" data-name="instrumental">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="instrumental"
+            name="category"
+            data-name="instrumental"
+          />
+          <label for="instrumental">Instrumental</label>
+        </div>
+
+        <div class="option music-category" data-name="lofi">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="lofi"
+            name="category"
+            data-name="lofi"
+          />
+          <label for="lofi">Lofi</label>
+        </div>
+
+        <div class="option music-category" data-name="motivating">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="motivating"
+            name="category"
+            data-name="motivating"
+          />
+          <label for="motivating">Motivating</label>
+        </div>
+
+        <div class="option music-category" data-name="ambient">
+          <input
+            type="radio"
+            class="radio music-category"
+            id="ambient"
+            name="category"
+            data-name="ambient"
+          />
+          <label for="ambient">Ambient</label>
+        </div>
+      </div>
+
+      <div class="selected">All</div>
+    </div>
+    <!-- filter -->
+
+    <!-- music-card -->
+    <div class="yoga-card-container" id="music-container">
+      <div class="yoga-box">
+
+        <!-- instrumental, nature instrument and motivating-->
+        <div
+          class="music-content music-mobile-content"
+          data-name="surya-namaskar"
+        >
+          <div
+            class="yoga-img"
+          >
+            <img
+              src="https://thedaily9.in/wp-content/uploads/2022/10/5f6866952596dd298e5b2961_the-ultimate-exercise.jpg"
+              alt=""
+            />
+            <div class="yoga-img-text">Surya Namaskar, or Sun Salutation, is a sequence of twelve yoga postures performed in a fluid motion to salute the sun and energize the body. It involves a combination of forward bends, backward bends, and strengthening poses, promoting flexibility, strength, and mental clarity. Practicing Surya Namaskar regularly can enhance overall physical and mental well-being.</div> <!-- Add this line -->
+          </div>
+          <div class="yoga-title"><span>Surya Namaskar</span></div>
+        </div>
+
+
+
+
+        <div
+        class="music-content music-mobile-content"
+        data-name="Paschimottanasana"
+      >
+        <div
+          class="yoga-img"
+        >
+          <img
+            src="https://femina.wwmindia.com/content/2022/jul/yoga-011657546507.jpg"
+            alt=""
+          />
+          <div class="yoga-img-text">Padmasana or Lotus Pose derives its name from the Sanskrit word for lotus. To truly enjoy the benefits of this asana, sit in a cross-legged position with an erect spine and both feet on the opposite thighs. Padmasana helps open up your hips, stretches your ankles and heels. It calms your mind, helps with brain functioning, and reduces muscle tension.</div> <!-- Add this line -->
+        </div>
+        <div class="yoga-title"><span>Paschimottanasana</span></div>
+      </div>
+
+
+      <div
+      class="music-content music-mobile-content"
+      data-name="Bhujangasana"
+    >
+      <div
+        class="yoga-img"
+      >
+        <img
+          src="https://rishikeshashtangayogaschool.com/blog/wp-content/uploads/2021/11/cobra-pose_11zon.jpg"
+          alt=""
+        />
+        <div class="yoga-img-text">It is known as the corrector of the curvature and makes the spine flexible. The curve structure of the asana massages the deep back muscles, spine and nerves. It can be a great asana for people dealing with arthritis of the lower back and lower back pains. It relieves menstrual problems by stretching the uterus and ovaries. It releases stress through invigorating adrenal glands and kidneys.
+        </div> <!-- Add this line -->
+      </div>
+      <div class="yoga-title"><span>Bhujangasana</span></div>
+    </div>
+
+
+    <div
+    class="music-content music-mobile-content"
+    data-name="Sukhasana"
+  >
+    <div
+      class="yoga-img"
+    >
+      <img
+        src="https://www.arogyayogaschool.com/blog/wp-content/uploads/2017/04/Sukhasana-Help-Reduce-Your-Blood-Pressure.jpg"
+        alt=""
+      />
+      <div class="yoga-img-text">Sukhasana or Easy Pose · It helps to reduce anxiety, stress and mental tiredness. · It corrects the body posture and stretches the chest and spine.</div> <!-- Add this line -->
+    </div>
+    <div class="yoga-title"><span>Sukhasana</span></div>
+  </div>
+
+    </div>
+  </div>
+  <script src="./js/yoga.js"></script>
+</body>
+</html>
