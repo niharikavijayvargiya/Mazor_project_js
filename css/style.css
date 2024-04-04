@@ -132,8 +132,8 @@
     color: var(--light);
     background-color: linear-gradient(
       to top right,
-      rgba(255, 255, 255, 0.7),
-      rgba(255, 255, 255, 0.3)
+      rgba(167, 6, 176, 0.7),
+      rgba(126, 72, 143, 0.3)
     );
     width: 380px;
     margin: 20px;
@@ -222,16 +222,18 @@
     align-items: center;
     justify-content: space-evenly;
     padding: 1rem;
+    background-color: rgba(54, 5, 61, 0.1);
   }
   #greeting {
     letter-spacing: 1px;
     font-weight: 500;
-    color: rgb(245, 230, 230);
+    color: rgb(96, 19, 19);
   }
   .typing {
     font-size: 48px;
     font-weight: 600;
     letter-spacing: 1px;
+    color: rgb(1, 11, 34);
   }
   #name {
     outline: none;
@@ -241,7 +243,7 @@
   
   /* accordion */
   .accordion {
-    background: lightblue;
+    background: rgb(180, 141, 26);
     margin: 0 4.3rem 1rem 2rem;
     border-radius: 10px;
   }
@@ -321,6 +323,7 @@
     height: 100vh;
     visibility: hidden;
     opacity: 0;
+    color: purple;
   }
   .modal-container {
     display: flex;
@@ -403,6 +406,11 @@
   .close-btn:hover {
     transform: rotate(360deg);
   }
+
+
+
+
+  
   /* bg modal */
   #music-modal {
     background: url(../images/modal-home-images/music.jpg);
@@ -2625,7 +2633,8 @@
     border-radius: 50%;
     background-color: black; /* Set the circle color */
     overflow: hidden;
-    margin: 25% auto 0; /* Center the circle */
+    margin: 15% auto 0; /* Center the circle */
+    margin-bottom: 100px;
 }
 
 .focus-point {
@@ -2658,3 +2667,32 @@
         opacity: 0;
     }
 }
+
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+  }
+  
+  .updated-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .updated-accordion {
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .updated-modal {
+    display: none;
+  }
+  
+  /* Other styles remain the same */

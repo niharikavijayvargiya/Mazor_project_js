@@ -1,101 +1,88 @@
-// loader
+// Loader
 window.addEventListener("DOMContentLoaded", () => {
   const preload = document.querySelector(".preload");
-  preload.classList.add("preload-finish");
+  preload.style.opacity = 0;
+  preload.style.pointerEvents = "none";
 });
 
+// Menu Toggle
 const menuBtn = document.querySelector(".menu");
 const mobileNav = document.querySelector(".mobile-nav");
-const links = document.querySelectorAll(".mobile-nav-link");
 
-menuBtn.addEventListener("mouseover", () => {
+menuBtn.addEventListener("click", () => {
   mobileNav.classList.toggle("mobile-nav-open");
-  links.forEach((link, index) => {
-    if (link.style.animation) {
-      link.style.animation = "";
-    } else {
-      link.style.animation = `fade .5s ease forwards ${index / 7 + 0.5}s`;
-    }
-  });
   menuBtn.classList.toggle("toggle");
 });
 
-// web active
-const linkColor = document.querySelectorAll(".nav-link");
-
-function colorLink(event) {
-  linkColor.forEach((l) => l.classList.remove("active"));
-  event.target.classList.add("active");
-}
-linkColor.forEach((l) => l.addEventListener("mouseenter", colorLink));
-
-//tablet-active
-
-const mobileLink = document.querySelectorAll(".mobile-nav-link");
-function colorMobileLink(event) {
-  mobileLink.forEach((l) => l.classList.remove("mobile-active"));
-  event.target.classList.add("mobile-active");
-}
-mobileLink.forEach((l) => l.addEventListener("touchstart", colorMobileLink));
-
-//  mobile/small sz active
-const BmobileLink = document.querySelectorAll(".mobile-b-icon");
-function activeLink(event) {
-  BmobileLink.forEach((l) => l.classList.remove("mobile-b-active"));
-  event.target.classList.add("mobile-b-active");
-}
-BmobileLink.forEach((l) => l.addEventListener("click", activeLink));
-// greetings
+// Greetings
 const greeting = document.getElementById("greeting");
-
 function setGreeting() {
-  let today = new Date(),
-    hour = today.getHours();
+  let today = new Date();
+  let hour = today.getHours();
+  let minute = today.getMinutes();
+  let timeOfDay;
 
   if (hour < 12) {
-    // morning
-    greeting.textContent = "Good morning, ";
+    timeOfDay = "morning";
   } else if (hour < 18) {
-    // afternoon
-    greeting.textContent = "Good afternoon, ";
+    timeOfDay = "afternoon";
   } else {
-    // evening
-    greeting.textContent = "Good evening, ";
+    timeOfDay = "evening";
   }
+
+  // Convert hour and minute to string and pad single digit values with leading zero
+  hour = hour.toString().padStart(2, '0');
+  minute = minute.toString().padStart(2, '0');
+
+  // Calculate next meal time
+  let nextMeal = '';
+  let mealTime = 0;
+
+  if (hour < 10) {
+    nextMeal = 'breakfast';
+    mealTime = 10;
+  } else if (hour < 14) {
+    nextMeal = 'lunch';
+    mealTime = 14;
+  } else if (hour < 20) {
+    nextMeal = 'dinner';
+    mealTime = 20;
+  } else {
+    nextMeal = 'breakfast';
+    mealTime = 10; // Next day's breakfast
+  }
+
+  // Display reminder for the next meal
+  let mealReminder = '';
+
+  if (nextMeal === 'breakfast') {
+    mealReminder = 'brekfast';
+  } else if (nextMeal === 'lunch') {
+    mealReminder = 'lunch';
+  } else {
+    mealReminder = 'dinner';
+  }
+
+  // Update greeting message with current time and meal reminder
+  greeting.textContent = `Good ${timeOfDay} Niharika, Currently the time is ${hour}:${minute}. Make sure to have your ${mealReminder} at ${mealTime}:00.`;
 }
+
+// Call the setGreeting function
 setGreeting();
 
-// getname
+
+
+// Call the setGreeting function
+setGreeting();
+
+
+
+
+// Name
 const name = document.getElementById("name");
 
-function getName() {
-  if (localStorage.getItem("name") === null) {
-    name.textContent = " [Enter name]";
-  } else {
-    name.textContent = localStorage.getItem("name");
-  }
-}
 
-// setname
-
-function setName(event) {
-  if (event.type === "keypress") {
-    // make sure enter is pressed
-    if (event.which == 13 || event.keyCode == 13) {
-      localStorage.setItem("name", event.target.innerText);
-      name.blur();
-    }
-  } else {
-    localStorage.setItem("name", event.target.innerText);
-  }
-}
-
-name.addEventListener("keydown", setName);
-name.addEventListener("blur", setName);
-getName();
-
-// Reminder
-
+// Reminder Typing Effect
 const text = [
   "You matter.",
   "You're awesome!",
@@ -128,32 +115,40 @@ let letter = "";
     count = 0;
   }
   currentText = text[count];
-  letter = currentText.slice(0);
+  letter = currentText.slice(0, ++index);
 
   document.querySelector(".typing").textContent = letter;
   if (letter.length === currentText.length) {
     count++;
     index = 0;
+    setTimeout(type, 2000); // Delay before erasing text
+  } else {
+    setTimeout(type, 100); // Typing speed
   }
-  setTimeout(type, 5000);
 })();
 
-// accordion
-
+// Accordion
 document.querySelectorAll(".accordion-button").forEach((button) => {
-  button.addEventListener("dblclick", () => {
+  button.addEventListener("click", () => {
     button.classList.toggle("accordion-button-active");
+    const content = button.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
   });
 });
 
-// modal home
+// Modal
 const modalBtn = document.querySelector(".modal-btn");
 const modalBg = document.querySelector(".modal-bg");
-const close = document.querySelector(".close-btn");
+const closeBtn = document.querySelector(".close-btn");
 
-modalBtn.addEventListener("click", function () {
+modalBtn.addEventListener("click", () => {
   modalBg.classList.add("modal-active");
 });
-close.addEventListener("click", () => {
+
+closeBtn.addEventListener("click", () => {
   modalBg.classList.remove("modal-active");
 });

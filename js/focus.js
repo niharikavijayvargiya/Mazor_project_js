@@ -1,3 +1,9 @@
+document.querySelectorAll(".accordion-button").forEach((button) => {
+    button.addEventListener("dblclick", () => {
+      button.classList.toggle("accordion-button-active");
+    });
+  });
+
 document.addEventListener("DOMContentLoaded", function() {
     // Function to reset the focus circle animation
     function resetFocusCircle() {

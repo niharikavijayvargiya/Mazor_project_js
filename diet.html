@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Plan Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-bar {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-link {
+      margin: 0 10px;
+    }
+
+    .nav-link a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 50px auto;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #diet-plan {
+      margin-top: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav-bar">
+    <nav class="nav">
+      <img src="https://res.cloudinary.com/zenbusiness/q_auto/v1/logaster/logaster-2020-08-h-colorful-mantra-9.jpg" alt="" class="logo" />
+      <ul class="nav-links">
+        <li class='nav-link'><a href='/'>Home</a></li>
+        <li class='nav-link'><a href='./music.html'>Music</a></li>
+        <li class='nav-link'><a href='./scene.html'>Scene</a></li>
+        <li class='nav-link'><a href='./relax.html'>Relax & Breathe</a></li>
+        <li class='nav-link'><a href='./hope.html'>Talk To Hope</a></li>
+        <li class='nav-link'><a href='./focus.html'>Focus</a></li>
+        <li class='nav-link'><a href='./yoga.html'>Yoga</a></li>
+      </ul>
+    </nav>
+  </nav>
+
+  <div class="container">
+    <h1>Diet Plan Generator</h1>
+    <div class="form-group">
+      <label for="weight">Weight (kg):</label>
+      <input type="number" id="weight" placeholder="Enter your weight">
+    </div>
+    <button id="generate-btn">Generate Diet Plan</button>
+    <div id="diet-plan"></div>
+  </div>
+  <script src="./js/diet.js"></script>
+</body>
+</html>

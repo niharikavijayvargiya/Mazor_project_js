@@ -1,4 +1,10 @@
 // loader
+
+document.querySelectorAll(".accordion-button").forEach((button) => {
+    button.addEventListener("dblclick", () => {
+      button.classList.toggle("accordion-button-active");
+    });
+  });
 window.addEventListener("load", () => {
     const preload = document.querySelector(".preload");
     preload.classList.add("preload-finish");
